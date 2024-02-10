@@ -1,11 +1,15 @@
 # TD n°3 - parallélisation du Bucket Sort
 
-*Ce TD peut être réalisé au choix, en C++ ou en Python*
+Le bucket sort a ici été réalisé en 2 étapes : 
+- Une première étape de parallelisation, où chaque unité de calcul trie une sous-liste avec un tri par insertion
+- Une deuxième étape, ou on rassemble les listes triées en une seule.
 
-Implémenter l'algorithme "bucket sort" tel que décrit sur les deux dernières planches du cours n°3 :
+Les temps de calculs sont indiqué ici :
 
-- le process 0 génère un tableau de nombres arbitraires,
-- il les dispatch aux autres process,
-- tous les process participent au tri en parallèle,
-- le tableau trié est rassemblé sur le process 0.
-
+Taille | Tri parallèle | Rassemblement | Total  |
+1      |  6.959        |  0.017        |  6.976 |
+2      |  1.833        |  0.017        |  1.850 |
+3      |  0.773        |  0.017        |  0.791 |
+4      |  0.519        |  0.018        |  0.536 |
+5      |  0.412        |  0.018        |  0.430 |
+6      |  0.312        |  0.022        |  0.334 |
